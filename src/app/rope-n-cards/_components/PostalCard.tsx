@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const PostalCard = () => {
   return (
-    <div className="w-[300px] relative rounded-3xl bg-white py-3 px-2 border-2 flex flex-col gap-2">
+    <div className="w-[280px] relative rounded-3xl bg-white shadow-sm py-3 px-2 border-2 flex flex-col gap-2">
       <div className="w-full h-48">
         <Image
           src="/puzzle-storage.webp"

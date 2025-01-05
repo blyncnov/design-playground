@@ -4,7 +4,6 @@ import gsap from "gsap";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 
-// _Components
 import PostalCard from "./_components/PostalCard";
 
 gsap.registerPlugin(useGSAP);
@@ -20,7 +19,7 @@ const PostNCards = () => {
   );
 
   return (
-    <div className="w-full max-w-full min-w-full h-screen bg-gradient-to-b from-[#ffffff] to-[#eaf6c6] p-4">
+    <div className="w-full max-w-full min-w-full h-screen bg-gradient-to-b from-[#ffffff] to-[#eaf6c6]">
       {/* Rope Base Container */}
       <div
         ref={container}
@@ -43,7 +42,10 @@ const PostNCards = () => {
         </svg>
       </div>
 
-      <PostalCard />
+      {/*  Postal Card Container */}
+      <div className="w-full flex justify-center items-center">
+        <PostalCard />
+      </div>
     </div>
   );
 };
