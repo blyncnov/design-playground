@@ -13,18 +13,20 @@ const PostNCards = () => {
 
   useGSAP(
     () => {
-      gsap.to("#curve_rope", { y: 20, duration: 1.5, repeat: -1, yoyo: true });
+      gsap.to("#postal_container", {
+        y: "20px",
+        z: "20px",
+        duration: 1.5,
+        repeat: -1,
+        yoyo: true,
+      });
     },
     { scope: container }
   );
 
   return (
-    <div className="w-full max-w-full min-w-full h-screen bg-gradient-to-b from-[#ffffff] to-[#eaf6c6]">
-      {/* Rope Base Container */}
-      <div
-        ref={container}
-        className="rope-container w-full overflow-hidden h-[200px]"
-      >
+    <div className="w-full max-w-full min-w-full h-screen bg-gradient-to-b from-[#ffffff] to-[#eaf6c6] py-20">
+      <div ref={container} className="rope-container w-full relative">
         {/* Rope SVG */}
         <svg
           width="100%"
@@ -32,6 +34,7 @@ const PostNCards = () => {
           viewBox="0 0 1538 99"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          className="w-full h-[6rem] -top-16 absolute"
         >
           <path
             id="curve_rope"
@@ -40,16 +43,18 @@ const PostNCards = () => {
             strokeWidth="2"
           />
         </svg>
-      </div>
 
-      {/*  Postal Card Container */}
-      <div className="w-full flex justify-center items-center">
-        <PostalCard />
+        {/*  Postal Card Container */}
+        <div
+          className="w-full flex justify-center items-center gap-10"
+          id="postal_container"
+        >
+          <PostalCard />
+          {/* <PostalCard /> */}
+        </div>
       </div>
     </div>
   );
 };
 
 export default PostNCards;
-
-// M1 27.0001C491 -100.5 736.5 322.5 1537 22
