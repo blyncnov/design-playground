@@ -11,30 +11,17 @@ gsap.registerPlugin(useGSAP);
 const PostNCards = () => {
   const container = useRef<HTMLDivElement>(null);
 
-  useGSAP(
-    () => {
-      gsap.to("#postal_container", {
-        y: "20px",
-        z: "20px",
-        duration: 1.5,
-        repeat: -1,
-        yoyo: true,
-      });
-    },
-    { scope: container }
-  );
-
   return (
-    <div className="w-full max-w-full min-w-full h-screen bg-gradient-to-b from-[#ffffff] to-[#eaf6c6] py-20">
+    <div className="w-full max-w-full min-w-full h-screen bg-gradient-to-b from-[#ffffff] to-[#eaf6c6]">
       <div ref={container} className="rope-container w-full relative">
         {/* Rope SVG */}
         <svg
           width="100%"
-          height="100%"
+          height="100px"
           viewBox="0 0 1538 99"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="w-full h-[6rem] -top-16 absolute"
+          className="w-full"
         >
           <path
             id="curve_rope"
@@ -46,7 +33,7 @@ const PostNCards = () => {
 
         {/*  Postal Card Container */}
         <div
-          className="w-full flex justify-center items-center gap-10"
+          className="w-full flex justify-center items-center gap-10 lg:-mt-[22px] md:-mt-[36px] -mt-[55px]"
           id="postal_container"
         >
           <PostalCard />
